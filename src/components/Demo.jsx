@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 import { copy, linkIcon, loader, tick } from "../assets";
-import axios from "axios";
+
+const api_key = import.meta.env.VITE_RAPID_APIKEY;
 
 const options = {
   method: "GET",
@@ -11,7 +13,7 @@ const options = {
     length: "3",
   },
   headers: {
-    "X-RapidAPI-Key": process.env.APIKEY,
+    "X-RapidAPI-Key": api_key,
     "X-RapidAPI-Host": "article-extractor-and-summarizer.p.rapidapi.com",
   },
 };
